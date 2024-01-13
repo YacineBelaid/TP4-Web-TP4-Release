@@ -1,0 +1,44 @@
+<div>
+  <form class="form" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+    <div>
+      <div>
+        <mat-form-field>
+          <mat-label>Nom d'usager</mat-label>
+          <input
+            matInput
+            name="username"
+            type="text"
+            formControlName="username"
+            data-testid="username"
+          />
+          <mat-error *ngIf="loginForm.get('username')?.errors?.['required']">
+            nom d'usager est requis
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Mot de passe</mat-label>
+          <input
+            matInput
+            name="password"
+            type="password"
+            formControlName="password"
+            data-testid="password"
+          />
+          <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">
+            mot de passe est requis
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <button mat-raised-button data-testid="login-button" color="primary" type="submit">Connexion</button>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      <mat-error data-testid="error-message">
+        {{ errorMessage }}
+      </mat-error>
+    </div>
+  </form>
+</div>

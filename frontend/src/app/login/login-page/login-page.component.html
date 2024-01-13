@@ -1,0 +1,9 @@
+<div>
+  <app-login-form (login)="onLogin($event)"></app-login-form>
+  <div *ngIf="errorMessage" class="error-message" style="margin-top: 20px; text-align: center;">
+    <mat-error *ngIf="errorMessage">
+      {{ errorMessage }}
+    </mat-error>
+  </div>  
+
+</div>

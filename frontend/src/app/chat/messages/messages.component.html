@@ -1,0 +1,9 @@
+<div #chatContainer class="messages">
+  <div *ngFor="let m of messages; let i = index">
+    <h3 *ngIf="showDateHeader(messages, i)">
+      {{ m.timestamp | date }}
+    </h3>
+    <img *ngIf="m.imageUrl" [src]="m.imageUrl" (load)="onImageLoaded()" />
+    <p>[{{ m.timestamp | date : "hh:mm" }}] {{ m.username }} : {{ m.text }}</p>
+  </div>
+</div>

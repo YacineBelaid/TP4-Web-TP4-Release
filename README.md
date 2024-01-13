@@ -1,4 +1,4 @@
 #Anno-chat
 
 Repost from a previous release.
-Web-app for an annonymouse web-chat public room 
+Web-app for an anonymous web-chat public room 
